@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a92f116-4829-4fd8-8248-f8f6f22f10fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/capstone-observatory-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/capstone-observatory-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Extraction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Extraction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Interaction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Interaction.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Manipulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Manipulation.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Visualization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Visualization.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$delayedInit$body.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main.class" afterDir="false" />
@@ -31,6 +34,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -91,5 +102,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

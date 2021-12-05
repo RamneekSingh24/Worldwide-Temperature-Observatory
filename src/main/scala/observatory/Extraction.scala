@@ -15,7 +15,6 @@ object Extraction {
   val RESOURCE_DIR = "/Users/ramneeksingh/Desktop/projects/observatory/src/main/resources/";
   val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("Wikipidia programming language rank")
   val sc = new SparkContext(conf);
-  val rdd: RDD[String] = sc.textFile(RESOURCE_DIR + "1975.csv");
 
   case class StationID(stnID : Int, wbanID : Int)
   case class TempData(date: LocalDate, temperature: Temperature)

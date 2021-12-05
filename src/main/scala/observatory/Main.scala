@@ -13,24 +13,76 @@ import observatory.Extraction
 import observatory.Extraction.getYearlyData
 import com.github.plokhotnyuk.rtree2d.core._
 import SphericalEarth._
-import observatory.Visualization.{RADIUS_EARTH_KM, degreeToRadian}
+import com.sksamuel.scrimage.writer
+import observatory.Visualization
+
+import java.nio.file.{Files, Paths}
+
 
 object Main extends App {
 
-//  Logger.getLogger("org.apache.spark").setLevel(Level.WARN);
-//  println("Starting! ")
-//  //  val RESOURCE_DIR = "/Users/ramneeksingh/Desktop/projects/observatory/src/main/resources/";
-//  //  val conf = new SparkConf().setMaster("local[*]").setAppName("Wikipidia programming language rank")
-//  //  val sc = new SparkContext(conf);
-//  //  val rdd = sc.textFile(RESOURCE_DIR + "1975.csv");
-//
-//  val year = 1975
-//  val dataRDD = getYearlyData(1975: Year, "stations.csv": String, f"${year}.csv": String): RDD[(Location, Temperature)]
-//  dataRDD.collect().foreach(println)
-//
-//  println("Done! ")
 
-//  val box1 = entry(1.0f, 1.0f, 2.0f, 2.0f, "Box 1")
+    val startTimeMillis = System.currentTimeMillis()
+
+    Logger.getLogger("org.apache.spark").setLevel(Level.WARN);
+
+
+
+    // Done(completed) till 1980
+    // Start from 1981
+
+    val startYear = 1981; // Done until 1980
+
+    for (year <- 1975 to 2015) {
+        try {
+            println(f"Starting ${year} ........")
+            val dataRDD = getYearlyData(year: Year, "stations.csv": String, f"${year}.csv": String): RDD[(Location, Temperature)]
+            val data = dataRDD.collect()
+            Interaction.generateTiles(data, year)
+            println(f"Done ${year} ........")
+        }
+        catch {
+            case x: Object => {
+                Console.err.println(f"Failed for ${year}")
+            }
+        }
+    }
+
+        val endTimeMillis = System.currentTimeMillis()
+        val durationSeconds = (endTimeMillis - startTimeMillis) / 1000
+
+        println(durationSeconds)
+
+
+
+
+
+
+
+
+//    println("Starting! ")
+//    val year = 2015
+//    val dataRDD = getYearlyData(year: Year, "stations.csv": String, f"${year}.csv": String): RDD[(Location, Temperature)]
+////    dataRDD.collect().foreach(println)
+//    val data = dataRDD.collect()
+//    Interaction.generateTiles(data, 2015)
+//
+////    val img = Visualization.visualize(data)
+////    img.output("img.png")
+//
+
+//
+
+
+
+
+
+
+
+
+
+
+    //  val box1 = entry(1.0f, 1.0f, 2.0f, 2.0f, "Box 1")
 //  val box2 = entry(2.0f, 2.0f, 3.0f, 3.0f, "Box 2")
 //  val entries = Seq(box1, box2)
 //
@@ -49,9 +101,9 @@ object Main extends App {
 //  assert(rtree.searchAll(1.5f, 1.5f, 2.5f, 2.5f).forall(entries.contains))
 
 
-
-  val city1 = entry(50.0614f, 19.9383f, "Kraków")
-  val city2 = entry(50.4500f, 30.5233f, "Kyiv")
+//
+//  val city1 = entry(50.0614f, 19.9383f, "Kraków")
+//  val city2 = entry(50.4500f, 30.5233f, "Kyiv")
   //val entries = Seq(city1, city2)
 //
 //  val rtree = RTree(entries, nodeCapacity = 4/* the best capacity for nearest queries for spherical geometry */)
@@ -64,14 +116,14 @@ object Main extends App {
 //  assert(rtree.searchAll(50f, 30f, 51f, 31f) == Seq(city2))
 //  assert(rtree.searchAll(0f, -180f, 90f, 180f).forall(entries.contains))
 //
-  def distance(p1 : Location, p2 : Location) = {
-    val l1 = Math.sin(degreeToRadian(p1.lat)) * Math.sin(degreeToRadian(p2.lat))
-    val l2 = Math.cos(degreeToRadian(p1.lat)) * Math.cos(degreeToRadian(p2.lat))
-    val l3 = Math.cos(degreeToRadian(p1.lon) - degreeToRadian(p2.lon))
-    val centralAngle = Math.acos(l1 + l2 * l3)
-    RADIUS_EARTH_KM *  centralAngle
-
-  }
+//  def distance(p1 : Location, p2 : Location) = {
+//    val l1 = Math.sin(degreeToRadian(p1.lat)) * Math.sin(degreeToRadian(p2.lat))
+//    val l2 = Math.cos(degreeToRadian(p1.lat)) * Math.cos(degreeToRadian(p2.lat))
+//    val l3 = Math.cos(degreeToRadian(p1.lon) - degreeToRadian(p2.lon))
+//    val centralAngle = Math.acos(l1 + l2 * l3)
+//    RADIUS_EARTH_KM *  centralAngle
+//
+//  }
 //
 //  val l1 = Location(23f, 50f)
 //  val l2 = Location(40f, 69f);
@@ -85,13 +137,6 @@ object Main extends App {
 //
 //  println(d1, d2)
   //(2599.8354,2599.887880367632)
-
-
-
-
-
-
-
 
 
 }

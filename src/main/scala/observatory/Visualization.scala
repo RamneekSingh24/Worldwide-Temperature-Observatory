@@ -15,7 +15,7 @@ object Visualization{
 
   val RADIUS_EARTH_KM = 6371.137
   val INTERPOLATION_CUTOFF = 1.0f
-  val P_VAL = 3
+  val P_VAL = 5
   val EPS = 1e-7
   val REQ_NEAREST = 1000;
 
@@ -25,14 +25,16 @@ object Visualization{
 
 
 
-  val colorLegend : Map[Temperature, Color] = Map[Temperature, Color](
-    +7.0 -> Color(0, 0, 0),   /* Black */
-    +4.0 -> Color(255, 0, 0),        /* Red */
-    +2.0 -> Color(255, 255, 0),      /* Yellow */
-    0.0 -> Color(255, 255, 255),    /* White */
-    -2.0 -> Color(0, 255, 255),      /* Light blue */
-    -7.0 -> Color(0, 0, 255)         /* Deep Blue */
-  )
+  val colorLegend : Array[(Temperature, Color)] = Map[Temperature, Color](
+    +60.0 -> Color(255, 255, 255),
+    +32.0 -> Color(255, 0, 0),
+    +12.0 -> Color(255, 255, 0),
+    0.0 -> Color(0, 255, 255),
+    -15.0 -> Color(0, 0, 255),
+    -27.0 -> Color(255, 0, 255),
+    -50.0 -> Color(33, 0, 107),
+    -60.0 -> Color(0, 0, 0),
+  ).toArray.sortWith(_._1 < _._1)
 
   //points.toList.sortWith(_._1 < _._1).toArray
 
@@ -104,18 +106,30 @@ object Visualization{
 
     def visualize(temperatures: Iterable[(Location, Double)]): Image = {
 
-      val colors = colorLegend.toArray.sortWith(_._1 < _._1).toArray
       val entries = temperatures.map(e => entry(e._1.lat.toFloat, e._1.lon.toFloat, e))
       val temperaturesRTree = RTree(entries)
 
-      val buffer = new Array[Pixel](WIDTH * HEIGHT)
-      for (y <- 0 until HEIGHT) {
-        for (x <- 0 until WIDTH) {
-          val predictedTemp = predictTemperature(temperaturesRTree, xyToLocation(x, y))
-          buffer(y * WIDTH + x) = colorToPixel(Visualization.interpolateColor(colors, predictedTemp))
+//      val buffer = new Array[Pixel](WIDTH * HEIGHT)
+//      for (y <- 0 until HEIGHT) {
+//        for (x <- 0 until WIDTH) {
+//          val predictedTemp = predictTemperature(temperaturesRTree, xyToLocation(x, y))
+//          buffer(y * WIDTH + x) = colorToPixel(Visualization.interpolateColor(colors, predictedTemp))
+//        }
+//      }
+
+      val pixels = Range(0, WIDTH * HEIGHT).par.map(
+        {
+          idx => {
+            val x = idx % WIDTH
+            val y = idx / WIDTH
+            val loc = xyToLocation(x, y)
+            val temp = predictTemperature(temperaturesRTree, loc)
+            colorToPixel(interpolateColor(colorLegend, temp))
+          }
         }
-      }
-      Image(WIDTH, HEIGHT, buffer)
+      ).toArray
+
+      Image(WIDTH, HEIGHT, pixels)
     }
 
 }
