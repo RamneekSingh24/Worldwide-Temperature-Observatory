@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a92f116-4829-4fd8-8248-f8f6f22f10fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Extraction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Extraction.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Interaction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Interaction.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Manipulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Manipulation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/observatory/Visualization.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/observatory/Visualization.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Interaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main$delayedInit$body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Visualization$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Visualization$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Visualization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/observatory/Visualization.class" afterDir="false" />
-    </list>
+    <list default="true" id="8a92f116-4829-4fd8-8248-f8f6f22f10fb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
