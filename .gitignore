@@ -4,3 +4,4 @@ src/main/resources/1976.csv
 .DS_Store
 .idea
 assignment.sbt
+!screenshot.png
