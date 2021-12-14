@@ -1,3 +1,6 @@
 *.csv
 src/main/resources/1976.csv
 *.png
+.DS_Store
+.idea
+assignment.sbt
