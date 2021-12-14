@@ -6,4 +6,4 @@ Built using spark and scala.
 
 Significant speed up in data interpolation using [rtree2d](https://github.com/plokhotnyuk/rtree2d). data structure.
 
-![](2021-12-15-03-51-46.png)
+![](screenshot.png)
